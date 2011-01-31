@@ -1,10 +1,66 @@
+version 0.12 (03 August 2010)
+  - prevents pagebreaks after sections and subsections (launchpad bug #409902),
+  as originally reported by C. Gaspoz and fixed by launchpad user tentotwo).
+
+version 0.11 (20 July 2010)
+  - removed the \ifpdf check when loading the graphicx package, as graphicx does
+  does check internally and this was preventing proper functionning with xelatex
+  and luatex, as reported by A. Trautmann. The same check was also removed
+  everywhere else  in the document (i.e. when loading the color and hyperref
+  packages).
+
+version 0.10 (13 June 2010)
+  - fixed a compatibility issue with the natbib package (natbib uses \section*
+  to format the bibliography title, while only \section was defined by moderncv),
+  as reported on launchpad (launchpad bug #393920).
+  - fixed a compatibility issues with (any package relying on) the etoolbox package,
+  due to the double definition of \AtEndPreamble, as reported by D. Becker.
+
+version 0.9 (31 May 2010)
+  - added support for the itemize, enumerate and description environments.
+
+version 0.8 (24 May 2010)
+  - added support for multibib. Also modified the template to illustrate how to show
+  labels in the bibliography, as requested by Tom D. R. and Stefan K.
+  - added a command to indicate your personal homepage (\homepage{url}), as
+  requested by J. de Jong and A. Pairet.
+  - corrected an alignment bug for text following a \quote with no immediate
+  \section, as kindly reported by J. Vermeulen and L. Saliou.
+  - corrected a spacing bug when no blank line (or \par) is left after \maketitle.
+  Thanks to A. Menzel for reporting the strange behaviour.
+  - corrected the alignment of the extrainfo title part when no picture was used,
+  as reported by M. Bana.
+  - corrected the missplacement of pdf bookmarks as noticed by L. Fortunato.
+  - corrected several bugs linked to the code for checking for empty arguments in
+  \cventry, as reported by B. Ekran (launchpad bug #268768), L. Păncescu and
+  E. Gregorio.
+
+version 0.7 (17 June 2008)
+  - corrected an outstanding spacing bug (space between cvlines longer
+  than 1 line).
+  - removed the need to use \closesection and \emptysection as internal
+  tabulars are now always closed. This allows she use of bibliography packages
+  such as bibunits. Thanks to S. Busch for pointing out the incompatibility and
+  helping testing out the bug correction.
+  - changed the definition of \photo: the first (optional) argument should
+  give the desired width of the picture, instead of its height
+  - corrected an alignment bug for \cvlistitems longer than 1 line, as
+  reported by S. Nikolopoulos.
+  - deprecated the commands \sethintscolumnlength and \sethintscolumntowidth.
+  Instead, just set \hintscolumnwidth to the desired length by using the regular
+  \setlength or \settowidth commands, and call \recomputelengths.
+  - added the ability to control the width of the name placeholder in the classic
+  theme, by setting the length \maketitlenamewidth. Again, don't forget to call
+  \recomputelengths afterward.
+
 version 0.6 (28 May 2007)
   - corrected some spacing bugs and cleaned up the code.
   - corrected a bug in the bibliography file of the examples spotted by
   U. Stöhr.
   - added color variants to the classic and casual style, as suggested by
   U. Stöhr.
-  - added a requested by A. Martin.
+  - added a page counter for resumes running longer than 1 page, as requested by
+  A. Martin. It can be disabled by the command \nopagenumbers{}.
   - added commands to include a mobile phone and fax number.
   - made the symbols used for the phone number, the email, ... customizable.
   To modify those symbols, just redefine \phonesymbol, emailsymbol, ...
