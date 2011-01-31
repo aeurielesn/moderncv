@@ -288,7 +288,7 @@
   \setlength{\listdoubleitemmaincolumnwidth}{0.475\listdoubleitemmaincolumnwidth}%
   % fancyhdr lengths
   \renewcommand{\headwidth}{\textwidth}}
-\sethintscolumnlength{0.15\textwidth}
+\sethintscolumnlength{0.19\textwidth}
 \recomputelengths
 
 % makes the cv title
